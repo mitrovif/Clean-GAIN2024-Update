@@ -163,11 +163,13 @@ glimpse(final_version_data[["EGRISS GAIN 2024"]]$year)
 # ======================================================
 # Step 7: Rename variables in "EGRISS GAIN 2024" using var_main (sequence-based)
 # ======================================================
+
 # Determine which columns to rename, excluding "year"
 egriss_gain_2024 <- final_version_data[["EGRISS GAIN 2024"]]
 cols_to_rename <- setdiff(colnames(egriss_gain_2024), "year")
 
 # Number of columns to rename from var_main (make sure not to exceed the length)
+var_main <- data_clean_data[["var_main"]]
 num_vars_to_rename <- min(length(cols_to_rename), nrow(var_main))
 
 # Get the old names (the ones you want to change) in order
